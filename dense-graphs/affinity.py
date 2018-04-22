@@ -55,7 +55,7 @@ class Affinity:
     def merge_with_closet_neighbor(self, v):
         if v in self.merged:
             return 
-        if self.closet_neighbors[self.closet_neighbors[v]] is v:
+        if self.closet_neighbors[self.closet_neighbors[v]] == v:
             self.UF.union(self.UF.find(v), self.UF.find(self.closet_neighbors[v]))
             self.merged.add(v)
             self.merged.add(self.closet_neighbors[v])
